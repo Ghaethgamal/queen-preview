@@ -3,296 +3,422 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1020">
-  <title>QUEEN | منصة مالية</title>
+
+  <title>QUEEN | حلول مالية وإدارة الحسابات</title>
+  <meta name="description" content="اكتشف QUEEN، منصة رقمية بواجهة عصرية لمتابعة الحسابات والاطلاع على خدمات إدارة الطلبات المالية.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="QUEEN">
+  <link rel="canonical" href="https://ghaethgamal.github.io/queen-preview/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="QUEEN | حلول مالية رقمية">
+  <meta property="og:description" content="واجهة رقمية عصرية لمتابعة الحسابات والخدمات المالية.">
+  <meta property="og:url" content="https://ghaethgamal.github.io/queen-preview/">
+  <meta property="og:site_name" content="QUEEN">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="QUEEN | حلول مالية رقمية">
+  <meta name="twitter:description" content="اكتشف منصة QUEEN الرقمية.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "QUEEN",
+    "url": "https://ghaethgamal.github.io/queen-preview/",
+    "description": "منصة رقمية لعرض خدمات الحسابات وإدارة الطلبات المالية."
+  }
+  </script>
+
   <style>
     :root {
+      color-scheme: dark;
       --bg: #0b1020;
-      --panel: #151f33;
+      --panel: #121b2d;
+      --text: #f5f7fc;
+      --muted: #aab5c8;
       --gold: #e8c76a;
-      --text: #f5f7fa;
-      --muted: #aab4c5;
+      --line: #29344a;
+      --green: #80d6ad;
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin-inline: auto;
     }
 
     header {
-      padding: 18px 6%;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .nav {
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #273148;
-      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .logo {
+    .brand {
       color: var(--gold);
       font-size: 27px;
-      font-weight: bold;
+      font-weight: 850;
       letter-spacing: 2px;
-    }
-
-    button, a { cursor: pointer; }
-
-    .lang, .outline {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 9px 14px;
-      border-radius: 9px;
       text-decoration: none;
     }
 
-    .hero {
-      padding: 65px 6% 45px;
-      text-align: center;
-      background: radial-gradient(ellipse at top, #23304b, var(--bg) 72%);
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
     }
 
-    .crown {
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 650;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #151515;
+      border-color: var(--gold);
+    }
+
+    .hero {
+      padding: 82px 0 70px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, #24314b 0%, var(--bg) 68%);
+    }
+
+    .eyebrow {
+      display: inline-block;
       color: var(--gold);
-      font-size: 54px;
-      margin-bottom: 4px;
+      border: 1px solid #66552b;
+      background: #1b1a18;
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 13px;
     }
 
     h1 {
-      font-size: clamp(35px, 8vw, 58px);
-      line-height: 1.2;
-      margin: 10px 0;
+      margin: 23px auto 16px;
+      max-width: 850px;
+      font-size: clamp(35px, 6vw, 62px);
+      line-height: 1.25;
+      letter-spacing: -1px;
     }
 
     h1 span { color: var(--gold); }
 
     .hero p {
+      max-width: 670px;
+      margin: 0 auto;
       color: var(--muted);
-      max-width: 570px;
-      margin: 18px auto;
+      font-size: 18px;
     }
 
-    .actions {
+    .hero-actions {
+      margin-top: 29px;
       display: flex;
       justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .trust-note {
       margin-top: 25px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .primary {
-      background: var(--gold);
-      color: #151515;
-      border: 0;
-      border-radius: 9px;
-      padding: 13px 22px;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    section { padding: 54px 0; }
 
-    .section { padding: 30px 6% 55px; }
-
-    .section h2 {
+    .section-heading {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
     }
 
-    .cards {
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: clamp(25px, 4vw, 34px);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
     }
 
     .card {
       background: var(--panel);
-      border: 1px solid #29354c;
-      padding: 23px;
-      border-radius: 15px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
     }
 
-    .card .icon { font-size: 30px; }
+    .card-icon {
+      color: var(--gold);
+      font-size: 27px;
+    }
 
-    .card h3 { color: var(--gold); }
+    .card h3 { margin: 12px 0 7px; }
 
-    .card p { color: var(--muted); }
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .about-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(22px, 5vw, 42px);
+    }
+
+    .about-panel h2 { margin-top: 0; }
+
+    .about-panel p { color: var(--muted); }
 
     .notice {
-      max-width: 750px;
-      margin: 0 auto;
-      border: 1px solid #574a2c;
-      background: #211d16;
-      padding: 18px;
-      border-radius: 12px;
-      color: #f0dfb1;
+      border-inline-start: 3px solid var(--gold);
+      padding: 12px 16px;
+      background: #1c1c20;
+      color: #e9dfc4;
       font-size: 14px;
     }
 
     footer {
-      border-top: 1px solid #273148;
-      text-align: center;
-      padding: 25px 15px;
+      border-top: 1px solid var(--line);
+      padding: 27px 0;
       color: var(--muted);
       font-size: 13px;
+      text-align: center;
     }
 
+    footer a { color: var(--gold); }
+
     .light {
-      --bg: #f5f7fa;
+      color-scheme: light;
+      --bg: #f6f7fb;
       --panel: #ffffff;
       --text: #172033;
       --muted: #5e6879;
-    }
-
-    .light header, .light footer {
-      border-color: #dce1e9;
+      --line: #dce2eb;
     }
 
     .light .hero {
-      background: radial-gradient(ellipse at top, #fff0c3, var(--bg) 75%);
+      background: radial-gradient(ellipse at 50% 0%, #fff0c6 0%, var(--bg) 70%);
     }
 
-    .light .card { border-color: #e0e4eb; }
-
     .light .notice {
-      background: #fff9e9;
-      color: #6b5018;
+      background: #fff8e8;
+      color: #59471e;
+    }
+
+    @media (max-width: 700px) {
+      .nav { min-height: 68px; }
+      .brand { font-size: 23px; }
+      .btn { padding: 9px 12px; }
+      .hero { padding: 60px 0 48px; }
+      .hero p { font-size: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 38px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="logo">♛ QUEEN</div>
-    <div>
-      <button class="lang" id="langBtn">English</button>
-      <button class="outline" id="themeBtn" aria-label="تغيير المظهر">☀️</button>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="QUEEN Home">♛ QUEEN</a>
+
+      <div class="nav-actions">
+        <button class="btn" id="language" type="button">English</button>
+        <button class="btn" id="theme" type="button" aria-label="تغيير المظهر">☀</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="crown">♛</div>
-      <h1 id="headline">مرحبًا بك في <span>QUEEN</span></h1>
-      <p id="intro">
-        منصة مالية بتصميم عصري تساعدك على متابعة حسابك
-        وإدارة طلباتك المالية في مكان واحد.
-      </p>
-      <div class="actions">
-        <a class="primary" href="#features" id="explore">اكتشف المنصة</a>
-        <a class="outline" href="#about" id="aboutBtn">عن QUEEN</a>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="eyebrow" id="eyebrow">منصة رقمية حديثة</span>
+
+        <h1 id="headline">إدارة مالية أكثر <span>وضوحًا</span></h1>
+
+        <p id="intro">
+          اكتشف تجربة QUEEN الرقمية لمتابعة معلومات الحساب
+          والاطلاع على الخدمات والطلبات من واجهة واحدة.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#services" id="primaryLink">اكتشف خدماتنا</a>
+          <a class="btn" href="#about" id="secondaryLink">عن المنصة</a>
+        </div>
+
+        <div class="trust-note" id="trustNote">
+          الشفافية · سهولة الاستخدام · حماية البيانات
+        </div>
       </div>
     </section>
 
-    <section class="section" id="features">
-      <h2 id="featuresTitle">خدمات المنصة</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="icon">👤</div>
-          <h3 id="accountTitle">حساب شخصي</h3>
-          <p id="accountText">واجهة مخصصة لمتابعة بيانات الحساب والعمليات.</p>
-        </article>
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="servicesTitle">خدمات المنصة</h2>
+          <p id="servicesSubtitle">تصميم يضع الوضوح وسهولة الاستخدام في المقدمة.</p>
+        </div>
 
-        <article class="card">
-          <div class="icon">💳</div>
-          <h3 id="depositTitle">طلبات الإيداع</h3>
-          <p id="depositText">تصور مبسط لتقديم طلب إيداع ومتابعة حالته.</p>
-        </article>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◈</div>
+            <h3 id="service1Title">إدارة الحساب</h3>
+            <p id="service1Text">واجهة واضحة لمتابعة بيانات الحساب ومعلوماته.</p>
+          </article>
 
-        <article class="card">
-          <div class="icon">↗</div>
-          <h3 id="withdrawTitle">طلبات السحب</h3>
-          <p id="withdrawText">واجهة لمتابعة طلبات السحب والمعلومات المالية.</p>
-        </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">↗</div>
+            <h3 id="service2Title">الطلبات المالية</h3>
+            <p id="service2Text">تصميم لمتابعة طلبات الإيداع والسحب عند تفعيل الخدمة.</p>
+          </article>
 
-        <article class="card">
-          <div class="icon">🌐</div>
-          <h3 id="currencyTitle">عملات متعددة</h3>
-          <p id="currencyText">تصميم يدعم عرض الدولار الأمريكي وUSDT.</p>
-        </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <h3 id="service3Title">تجربة متعددة اللغات</h3>
+            <p id="service3Text">تبديل سريع بين العربية والإنجليزية مع دعم الهاتف.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <h2 id="aboutTitle">رؤيتنا</h2>
-      <div class="notice" id="disclaimer">
-        هذه نسخة تجريبية لعرض التصميم فقط. لا تنفذ إيداعًا أو سحبًا
-        حقيقيًا، ولا تعرض رصيدًا ماليًا فعليًا. يلزم إعداد خادم آمن
-        وقاعدة بيانات والتحقق من المعاملات قبل تفعيل أي خدمات مالية.
+    <section id="about">
+      <div class="container about-panel">
+        <h2 id="aboutTitle">عن QUEEN</h2>
+        <p id="aboutText">
+          نعمل على تطوير تجربة رقمية واضحة وسهلة الاستخدام،
+          مع التركيز على تنظيم المعلومات وتقديم واجهة حديثة.
+        </p>
+
+        <div class="notice" id="disclaimer">
+          هذه نسخة تعريفية تجريبية. لا تُنفذ معاملات مالية حقيقية،
+          ولا تُنشئ حسابات أو تحفظ أرصدة. ستُضاف الوظائف الفعلية
+          بعد إعداد خادم آمن وقاعدة بيانات واختبارها.
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> QUEEN ·
-    <span id="footerText">واجهة تجريبية</span>
+    <div class="container">
+      <div>© <span id="year"></span> QUEEN</div>
+      <div id="footerText">جميع الحقوق محفوظة.</div>
+    </div>
   </footer>
 
   <script>
-    const translations = {
+    const copy = {
       ar: {
-        headline: 'مرحبًا بك في <span>QUEEN</span>',
-        intro: 'منصة مالية بتصميم عصري تساعدك على متابعة حسابك وإدارة طلباتك المالية في مكان واحد.',
-        explore: 'اكتشف المنصة',
-        aboutBtn: 'عن QUEEN',
-        featuresTitle: 'خدمات المنصة',
-        accountTitle: 'حساب شخصي',
-        accountText: 'واجهة مخصصة لمتابعة بيانات الحساب والعمليات.',
-        depositTitle: 'طلبات الإيداع',
-        depositText: 'تصور مبسط لتقديم طلب إيداع ومتابعة حالته.',
-        withdrawTitle: 'طلبات السحب',
-        withdrawText: 'واجهة لمتابعة طلبات السحب والمعلومات المالية.',
-        currencyTitle: 'عملات متعددة',
-        currencyText: 'تصميم يدعم عرض الدولار الأمريكي وUSDT.',
-        aboutTitle: 'رؤيتنا',
-        disclaimer: 'هذه نسخة تجريبية لعرض التصميم فقط. لا تنفذ إيداعًا أو سحبًا حقيقيًا، ولا تعرض رصيدًا ماليًا فعليًا. يلزم إعداد خادم آمن وقاعدة بيانات والتحقق من المعاملات قبل تفعيل أي خدمات مالية.',
-        footerText: 'واجهة تجريبية'
+        eyebrow: "منصة رقمية حديثة",
+        headline: 'إدارة مالية أكثر <span>وضوحًا</span>',
+        intro: "اكتشف تجربة QUEEN الرقمية لمتابعة معلومات الحساب والاطلاع على الخدمات والطلبات من واجهة واحدة.",
+        primaryLink: "اكتشف خدماتنا",
+        secondaryLink: "عن المنصة",
+        trustNote: "الشفافية · سهولة الاستخدام · حماية البيانات",
+        servicesTitle: "خدمات المنصة",
+        servicesSubtitle: "تصميم يضع الوضوح وسهولة الاستخدام في المقدمة.",
+        service1Title: "إدارة الحساب",
+        service1Text: "واجهة واضحة لمتابعة بيانات الحساب ومعلوماته.",
+        service2Title: "الطلبات المالية",
+        service2Text: "تصميم لمتابعة طلبات الإيداع والسحب عند تفعيل الخدمة.",
+        service3Title: "تجربة متعددة اللغات",
+        service3Text: "تبديل سريع بين العربية والإنجليزية مع دعم الهاتف.",
+        aboutTitle: "عن QUEEN",
+        aboutText: "نعمل على تطوير تجربة رقمية واضحة وسهلة الاستخدام، مع التركيز على تنظيم المعلومات وتقديم واجهة حديثة.",
+        disclaimer: "هذه نسخة تعريفية تجريبية. لا تُنفذ معاملات مالية حقيقية، ولا تُنشئ حسابات أو تحفظ أرصدة. ستُضاف الوظائف الفعلية بعد إعداد خادم آمن وقاعدة بيانات واختبارها.",
+        footerText: "جميع الحقوق محفوظة."
       },
       en: {
-        headline: 'Welcome to <span>QUEEN</span>',
-        intro: 'A modern financial platform concept to help users view their accounts and manage financial requests in one place.',
-        explore: 'Explore Platform',
-        aboutBtn: 'About QUEEN',
-        featuresTitle: 'Platform Features',
-        accountTitle: 'Personal Account',
-        accountText: 'A dedicated interface for account details and activity.',
-        depositTitle: 'Deposit Requests',
-        depositText: 'A concept for submitting and tracking deposit requests.',
-        withdrawTitle: 'Withdrawal Requests',
-        withdrawText: 'An interface for tracking withdrawals and financial information.',
-        currencyTitle: 'Multiple Currencies',
-        currencyText: 'Designed to display US dollars and USDT.',
-        aboutTitle: 'Our Vision',
-        disclaimer: 'This is a visual demo only. It does not process real deposits or withdrawals and does not display a real financial balance. A secure backend, database and transaction verification are required before financial services can be enabled.',
-        footerText: 'Demo interface'
+        eyebrow: "A Modern Digital Platform",
+        headline: 'Financial management with <span>clarity</span>',
+        intro: "Discover the QUEEN digital experience for viewing account information and exploring services in one place.",
+        primaryLink: "Explore Services",
+        secondaryLink: "About Us",
+        trustNote: "Transparency · Usability · Data Protection",
+        servicesTitle: "Our Services",
+        servicesSubtitle: "Designed around clarity and ease of use.",
+        service1Title: "Account Management",
+        service1Text: "A clear interface for viewing account information.",
+        service2Title: "Financial Requests",
+        service2Text: "A concept for tracking deposit and withdrawal requests when enabled.",
+        service3Title: "Multilingual Experience",
+        service3Text: "Switch between Arabic and English with mobile support.",
+        aboutTitle: "About QUEEN",
+        aboutText: "We are developing a clear, accessible digital experience focused on organized information and a modern interface.",
+        disclaimer: "This is an informational demo only. It does not process real financial transactions, create accounts, or store balances. Functional services require a secure backend, database, and testing.",
+        footerText: "All rights reserved."
       }
     };
 
-    let currentLang = 'ar';
+    let language = "ar";
 
-    document.getElementById('langBtn').addEventListener('click', () => {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      document.documentElement.lang = currentLang;
-      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.getElementById("language").addEventListener("click", function () {
+      language = language === "ar" ? "en" : "ar";
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
-      Object.entries(translations[currentLang]).forEach(([id, value]) => {
-        const element = document.getElementById(id);
-        if (element) element.innerHTML = value;
+      Object.entries(copy[language]).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = value;
       });
 
-      document.getElementById('langBtn').textContent =
-        currentLang === 'ar' ? 'English' : 'العربية';
+      this.textContent = language === "ar" ? "English" : "العربية";
     });
 
-    document.getElementById('themeBtn').addEventListener('click', () => {
-      document.body.classList.toggle('light');
+    document.getElementById("theme").addEventListener("click", function () {
+      document.body.classList.toggle("light");
     });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
