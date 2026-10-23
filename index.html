@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>QUEEN | منصة مالية</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f33;
+      --gold: #e8c76a;
+      --text: #f5f7fa;
+      --muted: #aab4c5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #273148;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    button, a { cursor: pointer; }
+
+    .lang, .outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      padding: 9px 14px;
+      border-radius: 9px;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 65px 6% 45px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, #23304b, var(--bg) 72%);
+    }
+
+    .crown {
+      color: var(--gold);
+      font-size: 54px;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 8vw, 58px);
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 18px auto;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .primary {
+      background: var(--gold);
+      color: #151515;
+      border: 0;
+      border-radius: 9px;
+      padding: 13px 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .section { padding: 30px 6% 55px; }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #29354c;
+      padding: 23px;
+      border-radius: 15px;
+    }
+
+    .card .icon { font-size: 30px; }
+
+    .card h3 { color: var(--gold); }
+
+    .card p { color: var(--muted); }
+
+    .notice {
+      max-width: 750px;
+      margin: 0 auto;
+      border: 1px solid #574a2c;
+      background: #211d16;
+      padding: 18px;
+      border-radius: 12px;
+      color: #f0dfb1;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid #273148;
+      text-align: center;
+      padding: 25px 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .light {
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5e6879;
+    }
+
+    .light header, .light footer {
+      border-color: #dce1e9;
+    }
+
+    .light .hero {
+      background: radial-gradient(ellipse at top, #fff0c3, var(--bg) 75%);
+    }
+
+    .light .card { border-color: #e0e4eb; }
+
+    .light .notice {
+      background: #fff9e9;
+      color: #6b5018;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">♛ QUEEN</div>
+    <div>
+      <button class="lang" id="langBtn">English</button>
+      <button class="outline" id="themeBtn" aria-label="تغيير المظهر">☀️</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="crown">♛</div>
+      <h1 id="headline">مرحبًا بك في <span>QUEEN</span></h1>
+      <p id="intro">
+        منصة مالية بتصميم عصري تساعدك على متابعة حسابك
+        وإدارة طلباتك المالية في مكان واحد.
+      </p>
+      <div class="actions">
+        <a class="primary" href="#features" id="explore">اكتشف المنصة</a>
+        <a class="outline" href="#about" id="aboutBtn">عن QUEEN</a>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2 id="featuresTitle">خدمات المنصة</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">👤</div>
+          <h3 id="accountTitle">حساب شخصي</h3>
+          <p id="accountText">واجهة مخصصة لمتابعة بيانات الحساب والعمليات.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">💳</div>
+          <h3 id="depositTitle">طلبات الإيداع</h3>
+          <p id="depositText">تصور مبسط لتقديم طلب إيداع ومتابعة حالته.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">↗</div>
+          <h3 id="withdrawTitle">طلبات السحب</h3>
+          <p id="withdrawText">واجهة لمتابعة طلبات السحب والمعلومات المالية.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🌐</div>
+          <h3 id="currencyTitle">عملات متعددة</h3>
+          <p id="currencyText">تصميم يدعم عرض الدولار الأمريكي وUSDT.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2 id="aboutTitle">رؤيتنا</h2>
+      <div class="notice" id="disclaimer">
+        هذه نسخة تجريبية لعرض التصميم فقط. لا تنفذ إيداعًا أو سحبًا
+        حقيقيًا، ولا تعرض رصيدًا ماليًا فعليًا. يلزم إعداد خادم آمن
+        وقاعدة بيانات والتحقق من المعاملات قبل تفعيل أي خدمات مالية.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> QUEEN ·
+    <span id="footerText">واجهة تجريبية</span>
+  </footer>
+
+  <script>
+    const translations = {
+      ar: {
+        headline: 'مرحبًا بك في <span>QUEEN</span>',
+        intro: 'منصة مالية بتصميم عصري تساعدك على متابعة حسابك وإدارة طلباتك المالية في مكان واحد.',
+        explore: 'اكتشف المنصة',
+        aboutBtn: 'عن QUEEN',
+        featuresTitle: 'خدمات المنصة',
+        accountTitle: 'حساب شخصي',
+        accountText: 'واجهة مخصصة لمتابعة بيانات الحساب والعمليات.',
+        depositTitle: 'طلبات الإيداع',
+        depositText: 'تصور مبسط لتقديم طلب إيداع ومتابعة حالته.',
+        withdrawTitle: 'طلبات السحب',
+        withdrawText: 'واجهة لمتابعة طلبات السحب والمعلومات المالية.',
+        currencyTitle: 'عملات متعددة',
+        currencyText: 'تصميم يدعم عرض الدولار الأمريكي وUSDT.',
+        aboutTitle: 'رؤيتنا',
+        disclaimer: 'هذه نسخة تجريبية لعرض التصميم فقط. لا تنفذ إيداعًا أو سحبًا حقيقيًا، ولا تعرض رصيدًا ماليًا فعليًا. يلزم إعداد خادم آمن وقاعدة بيانات والتحقق من المعاملات قبل تفعيل أي خدمات مالية.',
+        footerText: 'واجهة تجريبية'
+      },
+      en: {
+        headline: 'Welcome to <span>QUEEN</span>',
+        intro: 'A modern financial platform concept to help users view their accounts and manage financial requests in one place.',
+        explore: 'Explore Platform',
+        aboutBtn: 'About QUEEN',
+        featuresTitle: 'Platform Features',
+        accountTitle: 'Personal Account',
+        accountText: 'A dedicated interface for account details and activity.',
+        depositTitle: 'Deposit Requests',
+        depositText: 'A concept for submitting and tracking deposit requests.',
+        withdrawTitle: 'Withdrawal Requests',
+        withdrawText: 'An interface for tracking withdrawals and financial information.',
+        currencyTitle: 'Multiple Currencies',
+        currencyText: 'Designed to display US dollars and USDT.',
+        aboutTitle: 'Our Vision',
+        disclaimer: 'This is a visual demo only. It does not process real deposits or withdrawals and does not display a real financial balance. A secure backend, database and transaction verification are required before financial services can be enabled.',
+        footerText: 'Demo interface'
+      }
+    };
+
+    let currentLang = 'ar';
+
+    document.getElementById('langBtn').addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+      Object.entries(translations[currentLang]).forEach(([id, value]) => {
+        const element = document.getElementById(id);
+        if (element) element.innerHTML = value;
+      });
+
+      document.getElementById('langBtn').textContent =
+        currentLang === 'ar' ? 'English' : 'العربية';
+    });
+
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      document.body.classList.toggle('light');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
