@@ -4,421 +4,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
-
-  <title>QUEEN | حلول مالية وإدارة الحسابات</title>
-  <meta name="description" content="اكتشف QUEEN، منصة رقمية بواجهة عصرية لمتابعة الحسابات والاطلاع على خدمات إدارة الطلبات المالية.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="QUEEN">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="QUEEN منصة رقمية لمتابعة أسواق العملات الرقمية واستكشاف التحليلات وفرص التداول.">
+  <meta name="robots" content="index,follow">
+  <title>QUEEN | ذكاء السوق يبدأ هنا</title>
   <link rel="canonical" href="https://ghaethgamal.github.io/queen-preview/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="QUEEN | حلول مالية رقمية">
-  <meta property="og:description" content="واجهة رقمية عصرية لمتابعة الحسابات والخدمات المالية.">
+  <meta property="og:title" content="QUEEN — اكتشف السوق بذكاء">
+  <meta property="og:description" content="منصة رقمية لتحليلات السوق وفرص التداول وإدارة تجربة المستخدم.">
   <meta property="og:url" content="https://ghaethgamal.github.io/queen-preview/">
-  <meta property="og:site_name" content="QUEEN">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="QUEEN | حلول مالية رقمية">
-  <meta name="twitter:description" content="اكتشف منصة QUEEN الرقمية.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "QUEEN",
-    "url": "https://ghaethgamal.github.io/queen-preview/",
-    "description": "منصة رقمية لعرض خدمات الحسابات وإدارة الطلبات المالية."
-  }
-  </script>
-
+  <meta property="og:type" content="website">
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0b1020;
-      --panel: #121b2d;
-      --text: #f5f7fc;
-      --muted: #aab5c8;
-      --gold: #e8c76a;
-      --line: #29344a;
-      --green: #80d6ad;
+      --bg:#090b10; --panel:#11151e; --gold:#e6bd69;
+      --text:#f5f5f5; --muted:#a5adbc; --line:#252b37;
+      --green:#66d6a0;
     }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-      line-height: 1.75;
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      line-height:1.8;
     }
-
-    a { color: inherit; }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin-inline: auto;
-    }
-
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; cursor:pointer; }
+    .container { width:min(1120px,92%); margin:auto; }
     header {
-      border-bottom: 1px solid var(--line);
-      background: var(--bg);
+      position:sticky; top:0; z-index:10;
+      background:rgba(9,11,16,.92); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
     }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
+    nav {
+      min-height:76px; display:flex; align-items:center;
+      justify-content:space-between; gap:18px;
     }
-
-    .brand {
-      color: var(--gold);
-      font-size: 27px;
-      font-weight: 850;
-      letter-spacing: 2px;
-      text-decoration: none;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-
+    .logo { font-size:27px; font-weight:900; letter-spacing:3px; }
+    .logo span { color:var(--gold); }
+    .navlinks { display:flex; align-items:center; gap:24px; }
+    .navlinks a { color:var(--muted); font-size:14px; }
+    .navlinks a:hover { color:var(--gold); }
+    .actions { display:flex; align-items:center; gap:9px; }
     .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 11px 18px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 650;
-      background: transparent;
-      color: var(--text);
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 19px; border-radius:10px; border:1px solid var(--line);
+      font-weight:700; transition:.2s;
     }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #151515;
-      border-color: var(--gold);
-    }
-
+    .btn:hover { transform:translateY(-2px); }
+    .primary { background:var(--gold); color:#17130a; border-color:var(--gold); }
+    .secondary { background:transparent; color:var(--text); }
     .hero {
-      padding: 82px 0 70px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, #24314b 0%, var(--bg) 68%);
+      padding:95px 0 70px;
+      background:radial-gradient(ellipse at 50% 0%,#292114 0%,transparent 58%);
     }
-
+    .hero-grid {
+      display:grid; grid-template-columns:1.1fr .9fr;
+      gap:45px; align-items:center;
+    }
     .eyebrow {
-      display: inline-block;
-      color: var(--gold);
-      border: 1px solid #66552b;
-      background: #1b1a18;
-      border-radius: 30px;
-      padding: 5px 14px;
-      font-size: 13px;
+      color:var(--gold); font-size:13px; font-weight:800;
+      letter-spacing:1.5px;
     }
-
-    h1 {
-      margin: 23px auto 16px;
-      max-width: 850px;
-      font-size: clamp(35px, 6vw, 62px);
-      line-height: 1.25;
-      letter-spacing: -1px;
+    h1 { font-size:clamp(38px,6vw,67px); line-height:1.2; margin:18px 0; }
+    h1 span { color:var(--gold); }
+    .lead { color:var(--muted); max-width:600px; font-size:17px; }
+    .hero-buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .visual {
+      border:1px solid #383023; border-radius:24px; padding:24px;
+      background:linear-gradient(145deg,#171b24,#0e1016);
+      box-shadow:0 25px 80px #0006;
     }
-
-    h1 span { color: var(--gold); }
-
-    .hero p {
-      max-width: 670px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 18px;
+    .visual-top { display:flex; justify-content:space-between; gap:10px; }
+    .tag {
+      border:1px solid #4d442f; color:var(--gold);
+      border-radius:20px; padding:3px 10px; font-size:12px;
     }
-
-    .hero-actions {
-      margin-top: 29px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
+    .chart {
+      height:180px; display:flex; align-items:end; gap:8px;
+      padding:22px 0; border-bottom:1px solid var(--line);
     }
-
-    .trust-note {
-      margin-top: 25px;
-      font-size: 13px;
-      color: var(--muted);
+    .bar {
+      flex:1; min-width:5px; border-radius:5px 5px 0 0;
+      background:linear-gradient(0deg,#8c682d,var(--gold));
+      opacity:.9;
     }
-
-    section { padding: 54px 0; }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 8px;
-      font-size: clamp(25px, 4vw, 34px);
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 17px;
-    }
-
+    .metric-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:18px; }
+    .metric { background:#ffffff06; border:1px solid var(--line); padding:14px; border-radius:12px; }
+    .metric small { color:var(--muted); display:block; }
+    .metric strong { font-size:19px; }
+    section { padding:68px 0; }
+    .section-head { max-width:650px; margin-bottom:30px; }
+    .section-head h2 { font-size:clamp(27px,4vw,39px); margin:7px 0; }
+    .section-head p { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
     .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 25px;
+      padding:24px; border:1px solid var(--line); border-radius:17px;
+      background:var(--panel); transition:.2s;
     }
-
-    .card-icon {
-      color: var(--gold);
-      font-size: 27px;
+    .card:hover { border-color:#8e7546; transform:translateY(-3px); }
+    .icon {
+      width:48px; height:48px; display:grid; place-items:center;
+      background:#e6bd6917; color:var(--gold); border-radius:13px;
+      font-size:23px; margin-bottom:17px;
     }
-
-    .card h3 { margin: 12px 0 7px; }
-
-    .card p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .about-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: clamp(22px, 5vw, 42px);
-    }
-
-    .about-panel h2 { margin-top: 0; }
-
-    .about-panel p { color: var(--muted); }
-
+    .card h3 { margin:0 0 8px; }
+    .card p { color:var(--muted); font-size:14px; margin:0; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+    .step-number { color:var(--gold); font-size:30px; font-weight:900; }
+    .pricing { border-color:#78613a; }
+    .price { font-size:30px; font-weight:900; margin:15px 0; }
+    .price small { font-size:13px; color:var(--muted); }
+    .list { padding:0; list-style:none; color:var(--muted); font-size:14px; }
+    .list li { margin:10px 0; }
+    .list li::before { content:"✓"; color:var(--green); margin-left:9px; }
     .notice {
-      border-inline-start: 3px solid var(--gold);
-      padding: 12px 16px;
-      background: #1c1c20;
-      color: #e9dfc4;
-      font-size: 14px;
+      padding:18px; border:1px solid #66532e; border-radius:13px;
+      background:#e6bd690c; color:#d7d0c1; font-size:13px;
     }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 27px 0;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
+    .cta {
+      text-align:center; padding:44px 25px; border-radius:22px;
+      border:1px solid #4b402c;
+      background:radial-gradient(ellipse at top,#2a2317,#11141b 70%);
     }
-
-    footer a { color: var(--gold); }
-
-    .light {
-      color-scheme: light;
-      --bg: #f6f7fb;
-      --panel: #ffffff;
-      --text: #172033;
-      --muted: #5e6879;
-      --line: #dce2eb;
+    .cta h2 { font-size:clamp(27px,4vw,38px); margin:0 0 12px; }
+    footer { border-top:1px solid var(--line); padding:25px 0; color:var(--muted); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    #language { background:transparent; color:var(--gold); padding:8px 10px; border:1px solid var(--line); border-radius:9px; }
+    @media(max-width:800px) {
+      .hero-grid { grid-template-columns:1fr; }
+      .grid,.steps { grid-template-columns:1fr; }
+      .navlinks { display:none; }
+      .hero { padding-top:60px; }
     }
-
-    .light .hero {
-      background: radial-gradient(ellipse at 50% 0%, #fff0c6 0%, var(--bg) 70%);
+    @media(min-width:801px) and (max-width:1000px) {
+      .grid,.steps { grid-template-columns:repeat(2,1fr); }
     }
-
-    .light .notice {
-      background: #fff8e8;
-      color: #59471e;
+    body.en { direction:ltr; }
+    body.en .list li::before { margin-left:0; margin-right:9px; }
+    body.light {
+      --bg:#f5f4f0; --panel:#fff; --text:#17191e;
+      --muted:#626b78; --line:#dddcd5;
     }
-
-    @media (max-width: 700px) {
-      .nav { min-height: 68px; }
-      .brand { font-size: 23px; }
-      .btn { padding: 9px 12px; }
-      .hero { padding: 60px 0 48px; }
-      .hero p { font-size: 16px; }
-      .grid { grid-template-columns: 1fr; }
-      section { padding: 38px 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    body.light header { background:#f5f4f0ee; }
+    body.light .visual { background:linear-gradient(145deg,#fff,#efede7); }
+    body.light .metric { background:#00000005; }
+    body.light .cta { background:linear-gradient(145deg,#f7ebd2,#fff); }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="QUEEN Home">♛ QUEEN</a>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">QUEEN<span>.</span></a>
+      <div class="navlinks">
+        <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
+        <a href="#how" data-ar="كيف تعمل" data-en="How it works">كيف تعمل</a>
+        <a href="#plans" data-ar="الباقات" data-en="Plans">الباقات</a>
+      </div>
+      <div class="actions">
+        <button id="language" type="button" aria-label="Change language">EN</button>
+        <button id="theme" class="btn secondary" type="button" aria-label="Change theme">☼</button>
+        <a class="btn primary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-      <div class="nav-actions">
-        <button class="btn" id="language" type="button">English</button>
-        <button class="btn" id="theme" type="button" aria-label="تغيير المظهر">☀</button>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow" data-ar="رؤية أوضح للأسواق الرقمية" data-en="A clearer view of digital markets">رؤية أوضح للأسواق الرقمية</div>
+        <h1 data-ar-html="اكتشف السوق<br><span>بذكاء أكبر.</span>" data-en-html="Explore markets<br><span>with smarter insight.</span>">اكتشف السوق<br><span>بذكاء أكبر.</span></h1>
+        <p class="lead" data-ar="QUEEN واجهة رقمية تجمع أدوات متابعة السوق، وتحليلات التداول، ومعلومات تساعدك على فهم الفرص والمخاطر قبل اتخاذ قراراتك." data-en="QUEEN brings together market tracking, trading insights and information to help you understand opportunities and risks before making decisions.">QUEEN واجهة رقمية تجمع أدوات متابعة السوق، وتحليلات التداول، ومعلومات تساعدك على فهم الفرص والمخاطر قبل اتخاذ قراراتك.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#services" data-ar="استكشف الخدمات" data-en="Explore services">استكشف الخدمات</a>
+          <a class="btn secondary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="تواصل عبر تيليجرام ↗" data-en="Contact on Telegram ↗">تواصل عبر تيليجرام ↗</a>
+        </div>
+      </div>
+      <div class="visual" aria-label="نموذج توضيحي لواجهة السوق">
+        <div class="visual-top">
+          <div><strong>QUEEN <span style="color:var(--gold)">MARKET</span></strong><br><small style="color:var(--muted)" data-ar="لوحة متابعة تجريبية" data-en="Demo market dashboard">لوحة متابعة تجريبية</small></div>
+          <span class="tag" data-ar="وضع تجريبي" data-en="DEMO MODE">وضع تجريبي</span>
+        </div>
+        <div class="chart" aria-label="رسم زخرفي غير متصل ببيانات السوق">
+          <i class="bar" style="height:28%"></i><i class="bar" style="height:42%"></i>
+          <i class="bar" style="height:34%"></i><i class="bar" style="height:55%"></i>
+          <i class="bar" style="height:47%"></i><i class="bar" style="height:67%"></i>
+          <i class="bar" style="height:52%"></i><i class="bar" style="height:76%"></i>
+          <i class="bar" style="height:63%"></i><i class="bar" style="height:88%"></i>
+          <i class="bar" style="height:72%"></i><i class="bar" style="height:96%"></i>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><small data-ar="حالة المنصة" data-en="Platform status">حالة المنصة</small><strong data-ar="واجهة تجريبية" data-en="Demo interface">واجهة تجريبية</strong></div>
+          <div class="metric"><small data-ar="بيانات السوق" data-en="Market data">بيانات السوق</small><strong data-ar="غير متصلة" data-en="Not connected">غير متصلة</strong></div>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <span class="eyebrow" id="eyebrow">منصة رقمية حديثة</span>
-
-        <h1 id="headline">إدارة مالية أكثر <span>وضوحًا</span></h1>
-
-        <p id="intro">
-          اكتشف تجربة QUEEN الرقمية لمتابعة معلومات الحساب
-          والاطلاع على الخدمات والطلبات من واجهة واحدة.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#services" id="primaryLink">اكتشف خدماتنا</a>
-          <a class="btn" href="#about" id="secondaryLink">عن المنصة</a>
-        </div>
-
-        <div class="trust-note" id="trustNote">
-          الشفافية · سهولة الاستخدام · حماية البيانات
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="servicesTitle">خدمات المنصة</h2>
-          <p id="servicesSubtitle">تصميم يضع الوضوح وسهولة الاستخدام في المقدمة.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">◈</div>
-            <h3 id="service1Title">إدارة الحساب</h3>
-            <p id="service1Text">واجهة واضحة لمتابعة بيانات الحساب ومعلوماته.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">↗</div>
-            <h3 id="service2Title">الطلبات المالية</h3>
-            <p id="service2Text">تصميم لمتابعة طلبات الإيداع والسحب عند تفعيل الخدمة.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">◎</div>
-            <h3 id="service3Title">تجربة متعددة اللغات</h3>
-            <p id="service3Text">تبديل سريع بين العربية والإنجليزية مع دعم الهاتف.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container about-panel">
-        <h2 id="aboutTitle">عن QUEEN</h2>
-        <p id="aboutText">
-          نعمل على تطوير تجربة رقمية واضحة وسهلة الاستخدام،
-          مع التركيز على تنظيم المعلومات وتقديم واجهة حديثة.
-        </p>
-
-        <div class="notice" id="disclaimer">
-          هذه نسخة تعريفية تجريبية. لا تُنفذ معاملات مالية حقيقية،
-          ولا تُنشئ حسابات أو تحفظ أرصدة. ستُضاف الوظائف الفعلية
-          بعد إعداد خادم آمن وقاعدة بيانات واختبارها.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <section id="services">
     <div class="container">
-      <div>© <span id="year"></span> QUEEN</div>
-      <div id="footerText">جميع الحقوق محفوظة.</div>
+      <div class="section-head">
+        <div class="eyebrow" data-ar="ما الذي نقدمه؟" data-en="WHAT WE OFFER">ما الذي نقدمه؟</div>
+        <h2 data-ar="أدوات تساعدك على فهم السوق" data-en="Tools to understand the market">أدوات تساعدك على فهم السوق</h2>
+        <p data-ar="تعرّف على أقسام المنصة المصممة لتنظيم معلومات التداول ومتابعة أنواع مختلفة من الفرص." data-en="Discover platform sections designed to organize trading information and explore different types of opportunities.">تعرّف على أقسام المنصة المصممة لتنظيم معلومات التداول ومتابعة أنواع مختلفة من الفرص.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">⌁</div><h3 data-ar="تحليلات السوق" data-en="Market insights">تحليلات السوق</h3><p data-ar="متابعة الاتجاهات ومستويات الأسعار والسيناريوهات المحتملة مع توضيح المخاطر." data-en="Follow trends, price levels and potential scenarios with clear risk information.">متابعة الاتجاهات ومستويات الأسعار والسيناريوهات المحتملة مع توضيح المخاطر.</p></article>
+        <article class="card"><div class="icon">↗</div><h3 data-ar="التداول الفوري" data-en="Spot trading">التداول الفوري</h3><p data-ar="مساحة لعرض أفكار التداول الفوري وأهدافها وشروط إلغاء الفكرة." data-en="A space for spot-trading ideas, targets and invalidation conditions.">مساحة لعرض أفكار التداول الفوري وأهدافها وشروط إلغاء الفكرة.</p></article>
+        <article class="card"><div class="icon">⇄</div><h3 data-ar="العقود الآجلة" data-en="Futures">العقود الآجلة</h3><p data-ar="عرض توعوي لخطط التداول وإدارة المخاطر، دون وعود بالعائد أو ضمان للنتائج." data-en="Educational trading plans and risk management, without promises or guaranteed results.">عرض توعوي لخطط التداول وإدارة المخاطر، دون وعود بالعائد أو ضمان للنتائج.</p></article>
+        <article class="card"><div class="icon">◇</div><h3 data-ar="فرص الإطلاقات الجديدة" data-en="New launches">فرص الإطلاقات الجديدة</h3><p data-ar="تنظيم المعلومات العامة حول المشاريع الجديدة ومواعيدها والمخاطر المرتبطة بها." data-en="Organize public information about new projects, timelines and associated risks.">تنظيم المعلومات العامة حول المشاريع الجديدة ومواعيدها والمخاطر المرتبطة بها.</p></article>
+        <article class="card"><div class="icon">◎</div><h3 data-ar="إدارة المخاطر" data-en="Risk management">إدارة المخاطر</h3><p data-ar="التعرّف على وقف الخسارة وحجم الصفقة وتأثير التقلبات على رأس المال." data-en="Understand stop-losses, position sizing and volatility exposure.">التعرّف على وقف الخسارة وحجم الصفقة وتأثير التقلبات على رأس المال.</p></article>
+        <article class="card"><div class="icon">▤</div><h3 data-ar="تقارير الأداء" data-en="Performance reports">تقارير الأداء</h3><p data-ar="قسم مخصص لتقارير موثقة بمنهجية واضحة عند توفر بيانات فعلية قابلة للتحقق." data-en="A section for transparent reports when verifiable performance data is available.">قسم مخصص لتقارير موثقة بمنهجية واضحة عند توفر بيانات فعلية قابلة للتحقق.</p></article>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const copy = {
-      ar: {
-        eyebrow: "منصة رقمية حديثة",
-        headline: 'إدارة مالية أكثر <span>وضوحًا</span>',
-        intro: "اكتشف تجربة QUEEN الرقمية لمتابعة معلومات الحساب والاطلاع على الخدمات والطلبات من واجهة واحدة.",
-        primaryLink: "اكتشف خدماتنا",
-        secondaryLink: "عن المنصة",
-        trustNote: "الشفافية · سهولة الاستخدام · حماية البيانات",
-        servicesTitle: "خدمات المنصة",
-        servicesSubtitle: "تصميم يضع الوضوح وسهولة الاستخدام في المقدمة.",
-        service1Title: "إدارة الحساب",
-        service1Text: "واجهة واضحة لمتابعة بيانات الحساب ومعلوماته.",
-        service2Title: "الطلبات المالية",
-        service2Text: "تصميم لمتابعة طلبات الإيداع والسحب عند تفعيل الخدمة.",
-        service3Title: "تجربة متعددة اللغات",
-        service3Text: "تبديل سريع بين العربية والإنجليزية مع دعم الهاتف.",
-        aboutTitle: "عن QUEEN",
-        aboutText: "نعمل على تطوير تجربة رقمية واضحة وسهلة الاستخدام، مع التركيز على تنظيم المعلومات وتقديم واجهة حديثة.",
-        disclaimer: "هذه نسخة تعريفية تجريبية. لا تُنفذ معاملات مالية حقيقية، ولا تُنشئ حسابات أو تحفظ أرصدة. ستُضاف الوظائف الفعلية بعد إعداد خادم آمن وقاعدة بيانات واختبارها.",
-        footerText: "جميع الحقوق محفوظة."
-      },
-      en: {
-        eyebrow: "A Modern Digital Platform",
-        headline: 'Financial management with <span>clarity</span>',
-        intro: "Discover the QUEEN digital experience for viewing account information and exploring services in one place.",
-        primaryLink: "Explore Services",
-        secondaryLink: "About Us",
-        trustNote: "Transparency · Usability · Data Protection",
-        servicesTitle: "Our Services",
-        servicesSubtitle: "Designed around clarity and ease of use.",
-        service1Title: "Account Management",
-        service1Text: "A clear interface for viewing account information.",
-        service2Title: "Financial Requests",
-        service2Text: "A concept for tracking deposit and withdrawal requests when enabled.",
-        service3Title: "Multilingual Experience",
-        service3Text: "Switch between Arabic and English with mobile support.",
-        aboutTitle: "About QUEEN",
-        aboutText: "We are developing a clear, accessible digital experience focused on organized information and a modern interface.",
-        disclaimer: "This is an informational demo only. It does not process real financial transactions, create accounts, or store balances. Functional services require a secure backend, database, and testing.",
-        footerText: "All rights reserved."
-      }
-    };
+  <section id="how">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-ar="خطوات بسيطة" data-en="SIMPLE STEPS">خطوات بسيطة</div>
+        <h2 data-ar="ابدأ باستكشاف QUEEN" data-en="Start exploring QUEEN">ابدأ باستكشاف QUEEN</h2>
+      </div>
+      <div class="steps">
+        <article class="card"><div class="step-number">01</div><h3 data-ar="تعرّف على المنصة" data-en="Explore the platform">تعرّف على المنصة</h3><p data-ar="استكشف الأقسام والخدمات والمعلومات المتاحة." data-en="Explore the sections, services and available information.">استكشف الأقسام والخدمات والمعلومات المتاحة.</p></article>
+        <article class="card"><div class="step-number">02</div><h3 data-ar="راجع المخاطر" data-en="Review the risks">راجع المخاطر</h3><p data-ar="افهم طبيعة الأصول الرقمية واحتمال خسارة رأس المال." data-en="Understand digital assets and the possibility of losing capital.">افهم طبيعة الأصول الرقمية واحتمال خسارة رأس المال.</p></article>
+        <article class="card"><div class="step-number">03</div><h3 data-ar="اطلب المعلومات" data-en="Request information">اطلب المعلومات</h3><p data-ar="تواصل معنا للاستفسار عن الخدمات المتاحة قبل اتخاذ أي قرار." data-en="Contact us to clarify available services before making a decision.">تواصل معنا للاستفسار عن الخدمات المتاحة قبل اتخاذ أي قرار.</p></article>
+      </div>
+    </div>
+  </section>
 
-    let language = "ar";
+  <section id="plans">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-ar="الاشتراكات" data-en="SUBSCRIPTIONS">الاشتراكات</div>
+        <h2 data-ar="اختر مستوى المتابعة المناسب لك" data-en="Choose your access level">اختر مستوى المتابعة المناسب لك</h2>
+        <p data-ar="الباقات التالية عرض توضيحي؛ الأسعار والمزايا النهائية لم تُفعّل بعد." data-en="The plans below are illustrative. Final prices and benefits are not yet active.">الباقات التالية عرض توضيحي؛ الأسعار والمزايا النهائية لم تُفعّل بعد.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3 data-ar="مجانية" data-en="Free">مجانية</h3><div class="price" data-ar="مجانًا" data-en="Free">مجانًا</div><ul class="list"><li data-ar="التعرّف على المنصة" data-en="Explore the platform">التعرّف على المنصة</li><li data-ar="محتوى تعليمي عام" data-en="General educational content">محتوى تعليمي عام</li><li data-ar="معلومات عن المخاطر" data-en="Risk information">معلومات عن المخاطر</li></ul><a class="btn secondary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="استفسر الآن" data-en="Ask us">استفسر الآن</a></article>
+        <article class="card pricing"><span class="tag" data-ar="قريبًا" data-en="COMING SOON">قريبًا</span><h3 data-ar="احترافية" data-en="Pro">احترافية</h3><div class="price">— <small data-ar="السعر يحدد لاحقًا" data-en="Price to be announced">السعر يحدد لاحقًا</small></div><ul class="list"><li data-ar="مزايا إضافية عند الإطلاق" data-en="Additional features at launch">مزايا إضافية عند الإطلاق</li><li data-ar="محتوى وتحليلات موسعة" data-en="Expanded content and insights">محتوى وتحليلات موسعة</li><li data-ar="شروط اشتراك معلنة بوضوح" data-en="Clearly disclosed subscription terms">شروط اشتراك معلنة بوضوح</li></ul><a class="btn primary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="اطلب التفاصيل" data-en="Request details">اطلب التفاصيل</a></article>
+        <article class="card"><h3 data-ar="مؤسسات" data-en="Institutional">مؤسسات</h3><div class="price" data-ar="حسب الاتفاق" data-en="Contact us">حسب الاتفاق</div><ul class="list"><li data-ar="استفسارات الأعمال" data-en="Business enquiries">استفسارات الأعمال</li><li data-ar="مناقشة الاحتياجات" data-en="Discuss requirements">مناقشة الاحتياجات</li><li data-ar="مراجعة نطاق الخدمة" data-en="Review service scope">مراجعة نطاق الخدمة</li></ul><a class="btn secondary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a></article>
+      </div>
+    </div>
+  </section>
 
-    document.getElementById("language").addEventListener("click", function () {
-      language = language === "ar" ? "en" : "ar";
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  <section>
+    <div class="container">
+      <div class="notice">
+        <strong data-ar="تنبيه مهم:" data-en="Important notice:">تنبيه مهم:</strong>
+        <span data-ar=" هذه الصفحة واجهة تعريفية تجريبية وليست عرضًا لاستثمار معتمد. لا توجد بيانات أداء حقيقية متصلة أو أرباح مضمونة أو خدمة إيداع مفعلة عبر هذه الصفحة. العملات الرقمية عالية المخاطر وقد تخسر جزءًا من رأس المال أو كله. تحقق من التراخيص والشروط القانونية قبل التعامل مع أي جهة." data-en=" This is an informational demo, not an offer of an approved investment. No verified live performance feed, guaranteed returns or deposit service is enabled here. Crypto assets are high risk and you may lose some or all of your capital. Verify licensing and legal terms before engaging with any provider."> هذه الصفحة واجهة تعريفية تجريبية وليست عرضًا لاستثمار معتمد. لا توجد بيانات أداء حقيقية متصلة أو أرباح مضمونة أو خدمة إيداع مفعلة عبر هذه الصفحة. العملات الرقمية عالية المخاطر وقد تخسر جزءًا من رأس المال أو كله. تحقق من التراخيص والشروط القانونية قبل التعامل مع أي جهة.</span>
+      </div>
+      <div class="cta" style="margin-top:35px">
+        <h2 data-ar="هل تريد معرفة المزيد عن QUEEN؟" data-en="Want to learn more about QUEEN?">هل تريد معرفة المزيد عن QUEEN؟</h2>
+        <p style="color:var(--muted)" data-ar="تواصل معنا للحصول على معلومات عن المشروع والخدمات." data-en="Contact us for information about the project and its services.">تواصل معنا للحصول على معلومات عن المشروع والخدمات.</p>
+        <a class="btn primary" href="https://t.me/Btcoin1k" target="_blank" rel="noopener noreferrer" data-ar="تواصل عبر Telegram ↗" data-en="Contact via Telegram ↗">تواصل عبر Telegram ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-      Object.entries(copy[language]).forEach(([id, value]) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = value;
-      });
+<footer>
+  <div class="container footer-inner">
+    <div><strong class="logo">QUEEN<span>.</span></strong><div data-ar="رؤية أوضح. قرارات أكثر وعيًا." data-en="Clearer insight. More informed decisions.">رؤية أوضح. قرارات أكثر وعيًا.</div></div>
+    <div>© <span id="year"></span> QUEEN. <span data-ar="جميع الحقوق محفوظة." data-en="All rights reserved.">جميع الحقوق محفوظة.</span></div>
+  </div>
+</footer>
 
-      this.textContent = language === "ar" ? "English" : "العربية";
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const langButton = document.getElementById("language");
+  let language = "ar";
+
+  langButton.addEventListener("click", () => {
+    language = language === "ar" ? "en" : "ar";
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+    document.body.classList.toggle("en", language === "en");
+    langButton.textContent = language === "ar" ? "EN" : "عربي";
+
+    document.querySelectorAll("[data-ar][data-en]").forEach(el => {
+      el.textContent = el.dataset[language];
     });
 
-    document.getElementById("theme").addEventListener("click", function () {
-      document.body.classList.toggle("light");
+    document.querySelectorAll("[data-ar-html][data-en-html]").forEach(el => {
+      el.innerHTML = el.dataset[language + "Html"];
     });
+  });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("theme").addEventListener("click", () => {
+    document.body.classList.toggle("light");
+  });
+</script>
 </body>
 </html>
