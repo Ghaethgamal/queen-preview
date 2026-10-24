@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول | QUEEN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b14;
+      color: white;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: min(85%, 360px);
+      padding: 28px;
+      border-radius: 18px;
+      background: #171725;
+      border: 1px solid #34344a;
+    }
+    h1 { text-align: center; color: #d9b46b; }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+    input { background: #0b0b14; color: white; border: 1px solid #45455a; }
+    button { background: #d9b46b; border: 0; font-weight: bold; cursor: pointer; }
+    a { color: #d9b46b; }
+    p { line-height: 1.8; }
+    #message { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>QUEEN</h1>
+    <h2>تسجيل الدخول</h2>
+    <form id="login-form">
+      <input id="email" type="email" placeholder="البريد الإلكتروني" required>
+      <input id="password" type="password" placeholder="كلمة المرور" required>
+      <button type="submit">دخول</button>
+    </form>
+    <p id="message" role="status"></p>
+    <p>ليس لديك حساب؟ <a href="signup.html">إنشاء حساب</a></p>
+    <p><a href="index.html">العودة للرئيسية</a></p>
+  </main>
+  <script type="module" src="assets/js/login.js"></script>
+</body>
+</html>
