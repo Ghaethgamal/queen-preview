@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | QUEEN</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #0b0b14;
+      color: white;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    .card {
+      background: #171725;
+      border: 1px solid #34344a;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    h1, h2 { color: #d9b46b; }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+    input {
+      background: #0b0b14;
+      color: white;
+      border: 1px solid #45455a;
+    }
+    button {
+      background: #d9b46b;
+      border: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #logout-button {
+      background: #34344a;
+      color: white;
+    }
+    p { line-height: 1.8; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>QUEEN</h1>
+
+    <section class="card">
+      <h2>مرحبًا بك، <span id="user-name">مستخدم QUEEN</span></h2>
+      <p>البريد الإلكتروني: <span id="user-email"></span></p>
+    </section>
+
+    <section class="card">
+      <h2>تعديل الملف الشخصي</h2>
+      <form id="profile-form">
+        <label for="full-name">الاسم الكامل</label>
+        <input id="full-name" type="text" required>
+        <button type="submit">حفظ التغييرات</button>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>حسابك</h2>
+      <p>هذه لوحة الحساب الأساسية. لم يتم تفعيل أي إيداعات أو سحوبات أو أرباح مالية.</p>
+      <button id="logout-button" type="button">تسجيل الخروج</button>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/dashboard.js"></script>
+</body>
+</html>
